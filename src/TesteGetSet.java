@@ -7,13 +7,10 @@ public class TesteGetSet {
 
         Cliente cliente = new Cliente();
 
-        cliente.setNome("Douglas Alves");
-        conta.setTitular(cliente);
+        cliente.setNome("Fulano");
 
-        cliente.setProfissao("Desenvolvedor");
 
-        Cliente clienteDois = new Cliente();
 
-        cliente.setNome("João");
+
     }
 }
