@@ -1,41 +1,39 @@
 public class CriaConta {
     public static void main(String[] args) {
 
-        Conta contaCliente = new Conta(15, 6677);
-        contaCliente.deposita(1000);
-
+        Conta contaUm = new Conta(15, 6677);
+        contaUm.deposita(1000);
 
         Conta contaDois = new Conta(15, 6327);
         contaDois.deposita(500);
 
 
 
-        //transferindo para outra conta
-        boolean conseguiuTransferir = contaDois.transfere(100, contaCliente);
+                //validando transferência para a contaUm
+        boolean conseguiuTransferir = contaDois.transfere(100, contaUm);
         System.out.println(conseguiuTransferir);
         System.out.println();
 
 
         //Cadastrando cliente
+        System.out.println();
         Cliente cliente = new Cliente();
         cliente.setNome("Douglas");
-        contaCliente.setTitular(cliente);
+        contaUm.setTitular(cliente);
         cliente.setCpf("222.222.222-22");
+        contaUm.getTitular().setProfissao("Programador");
+        cliente.setEndereco("Porto Alegre");
 
-        contaCliente.getTitular().setProfissao("Programador");
 
+        System.out.println();
+        System.out.println("Titular: " + contaUm.getTitular().getNome());
+        System.out.println("Agência: " + contaUm.getAgencia());
+        System.out.println("Número da conta: " + contaUm.getNumero());
+        System.out.println("Saldo atualizado: " + contaUm.getSaldo());
+        System.out.println("Profissão: " + contaUm.getTitular().getProfissao());
+        System.out.println("Endereço: " + cliente.getEndereco());
 
-        //mesmo resultado do código a cima
-        Cliente titularDaConta = contaCliente.getTitular();
-        titularDaConta.setProfissao("Programador");
-
-        System.out.println("Titular: " + contaCliente.getTitular().getNome());
-        System.out.println("Agência: " + contaCliente.getAgencia());
-        System.out.println("Número da conta: " + contaCliente.getNumero());
-        System.out.println("Saldo atualizado: " + contaCliente.getSaldo());
-
-        System.out.println("Profissão: " + contaCliente.getTitular().getProfissao());
-
+        System.out.println();
         System.out.println("Total de Contas criadas: " + Conta.getTotal());
 
     }
