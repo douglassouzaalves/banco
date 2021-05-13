@@ -64,14 +64,17 @@ public class Conta {
     }
 
     public void setTitular(Cliente titular) {
+
         this.titular = titular;
     }
 
     public Cliente getTitular() {
+
         return titular;
     }
         //atributo estático
     public static int getTotal() {
+
         return Conta.total;
     }
 }
