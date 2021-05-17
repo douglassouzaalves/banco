@@ -8,6 +8,7 @@ public class TesteContas {
 
         novaContaPoupanca.transfere(500, novaContaCorrendo);
 
+        System.out.println("Saldo Conta Poupança: " + novaContaPoupanca.getSaldo());
         //checando se a transferência foi efetuada com sucesso.
         System.out.println("Saldo Conta Corrente: " + novaContaCorrendo.getSaldo());
     }

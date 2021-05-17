@@ -1,10 +1,10 @@
 public class CriaConta {
     public static void main(String[] args) {
 
-        Conta contaUm = new Conta(15, 6677);
+        Conta contaUm = new ContaCorrente(15, 6677);
         contaUm.deposita(1000);
 
-        Conta contaDois = new Conta(15, 6327);
+        Conta contaDois = new ContaPoupanca(15, 6327);
         contaDois.deposita(500);
 
 

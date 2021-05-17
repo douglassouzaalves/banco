@@ -1,6 +1,6 @@
-
-public class Conta {
-    private double saldo;
+                //conceito
+public  abstract class Conta {
+    protected double saldo;
     private int agencia;
     private int numero;
     private Cliente titular;
@@ -16,10 +16,7 @@ public class Conta {
     }
 
                 //método
-    public void deposita(double valor) {
-
-        this.saldo += valor;
-    }
+    public abstract void deposita(double valor);
 
     public boolean saca(double valor) {
         if(this.saldo >= valor) {
@@ -29,11 +26,12 @@ public class Conta {
     }
 
     public boolean transfere(double valor, Conta destino) {
-        if(this.saldo >= valor) {
-            this.saldo -= valor;
+        if(this.saca(valor)) {
             destino.deposita(valor);
             return true;
-        } return false;
+        } else {
+            return false;
+        }
     }
 
     public double getSaldo() {
