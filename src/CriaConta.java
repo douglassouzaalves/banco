@@ -8,7 +8,6 @@ public class CriaConta {
         contaDois.deposita(500);
 
 
-
                 //validando transferência para a contaUm
         boolean conseguiuTransferir = contaDois.transfere(100, contaUm);
         System.out.println(conseguiuTransferir);
