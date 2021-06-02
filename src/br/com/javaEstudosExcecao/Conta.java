@@ -1,4 +1,6 @@
-                //conceito
+package br.com.javaEstudosExcecao;
+
+//conceito
 public abstract class Conta {
     protected double saldo;
     private int agencia;
@@ -12,26 +14,29 @@ public abstract class Conta {
         Conta.total++; //acessando o atributo estático para realizar a contagem
         this.agencia = agencia;
         this.numero = numero;
+        if (agencia < 1) {
+            throw new IllegalArgumentException("Agência inválida");
+        }
+        if(numero < 1) {
+            throw new IllegalArgumentException("Número da conta é inválido");
+        }
         System.out.println("Criando conta " + this.numero);
     }
 
                 //método
     public abstract void deposita(double valor);
 
-    public boolean saca(double valor) {
-        if(this.saldo >= valor) {
-            this.saldo -= valor;
-            return true;
-        } return false;
+    public void saca(double valor) throws SacaException {
+
+        if(this.saldo < valor) {
+            throw new SacaException("Saldo: " + this.saldo + ", Valor: " + valor);
+        }
+         this.saldo -= valor;
     }
 
-    public boolean transfere(double valor, Conta destino) {
-        if(this.saca(valor)) {
-            destino.deposita(valor);
-            return true;
-        } else {
-            return false;
-        }
+    public void transfere(double valor, Conta destino) throws SacaException {
+        this.saca(valor);
+        destino.deposita(valor);
     }
 
     public double getSaldo() {

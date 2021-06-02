@@ -1,3 +1,5 @@
+package br.com.javaEstudosExcecao;
+
 public class CriaConta {
     public static void main(String[] args) {
 
@@ -9,9 +11,9 @@ public class CriaConta {
 
 
                 //validando transferência para a contaUm
-        boolean conseguiuTransferir = contaDois.transfere(100, contaUm);
-        System.out.println(conseguiuTransferir);
-        System.out.println();
+//        boolean conseguiuTransferir = contaDois.transfere(100, contaUm);
+//        System.out.println(conseguiuTransferir);
+//        System.out.println();
 
 
         //Cadastrando cliente

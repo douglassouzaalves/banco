@@ -1,5 +1,7 @@
+package br.com.javaEstudosExcecao;
+
 public class TesteContas {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SacaException {
         ContaCorrente novaContaCorrendo = new ContaCorrente(42, 666);
         novaContaCorrendo.deposita(3000);
 
@@ -8,8 +10,8 @@ public class TesteContas {
 
         novaContaPoupanca.transfere(500, novaContaCorrendo);
 
-        System.out.println("Saldo Conta Poupança: " + novaContaPoupanca.getSaldo());
+        System.out.println("Saldo br.com.javaEstudosExcecao.Conta Poupança: " + novaContaPoupanca.getSaldo());
         //checando se a transferência foi efetuada com sucesso.
-        System.out.println("Saldo Conta Corrente: " + novaContaCorrendo.getSaldo());
+        System.out.println("Saldo br.com.javaEstudosExcecao.Conta Corrente: " + novaContaCorrendo.getSaldo());
     }
 }
